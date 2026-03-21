@@ -96,14 +96,6 @@ website/
 
 This project is licensed under the Apache License 2.0 — see the `LICENSE` file for details.
 
-You are free to:
-
-* Use the code for personal or commercial projects
-* Modify and distribute
-* Include in larger works
-
-**Condition:** Include the original copyright notice and disclaimer.
-
 ---
 
 ## 👤 Author
