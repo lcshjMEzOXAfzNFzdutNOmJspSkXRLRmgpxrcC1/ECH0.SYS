@@ -15,34 +15,36 @@ A personal portfolio and operational security hub — clean design, Discord inte
 
 This is the official website for **TRPX1** — a personal security research collective focused on reconnaissance, tool development, and infrastructure mapping.
 
-The site features:
-- 🖤 Discord profile card with live avatar and decoration
-- 🎨 Dark theme with purple accents, matching TRPX1 branding
-- 🖱️ Interactive navigation that transforms on scroll (pill → circle)
-- 💻 Live terminal animation with recon commands
-- 📊 Recon dashboard with dynamic stats
-- 🧩 Expandable project cards with details
-- 🌓 Light/dark mode toggle
-- 🎵 Background music player with volume control
-- 📈 Visitor counter (localStorage-based)
+### Features:
+
+* 🖤 Discord profile card with live avatar and decoration
+* 🎨 Dark theme with purple accents, matching TRPX1 branding
+* 🖱️ Interactive navigation that transforms on scroll (pill → circle)
+* 💻 Live terminal animation with recon commands
+* 📊 Recon dashboard with dynamic stats
+* 🧩 Expandable project cards with details
+* 🌓 Light/dark mode toggle
+* 🎵 Background music player with volume control
+* 📈 Visitor counter (localStorage-based)
 
 ---
 
 ## 🚀 Live Site
 
-The site is hosted via GitHub Pages at:  https://lcshjmezoxafznfzdutnomjspskxrlrmgpxrcc1.github.io/TRPX1.SYS/
-
+The site is hosted via GitHub Pages:
+https://lcshjmezoxafznfzdutnomjspskxrlrmgpxrcc1.github.io/website/
 
 ---
 
 ## 📁 Repository Structure
-```
+
+```text
 website/
-├── index.html # Main entry point
-├── LICENSE # Apache 2.0 License
-├── README.md # This file
-└── assets/ # Images and static files
-└── 5a838e3c-1c11-437d-a19c-388d3f428def.png # Favicon
+├── index.html        # Main entry point
+├── LICENSE           # Apache 2.0 License
+├── README.md         # This file
+└── assets/           # Images and static files
+    └── favicon.png   # Site favicon
 ```
 
 ---
@@ -50,37 +52,103 @@ website/
 ## 🛠️ Features in Detail
 
 ### Discord Profile Card
-- Real-time avatar fetch via Discord CDN
-- Decoration overlay
-- Member since date
-- Custom "localhost:8080" status
+
+* Real-time avatar fetch via Discord CDN
+* Decoration overlay
+* Member since date
+* Custom "localhost:8080" status
 
 ### Terminal Animation
-- Live typing effect
-- Cycles through recon commands
-- Auto-restarts every 10 seconds
-- Cursor blinking animation
+
+* Live typing effect
+* Cycles through recon commands
+* Auto-restarts every 10 seconds
+* Cursor blinking animation
 
 ### Recon Dashboard
-- Endpoint count (live)
-- Daily rate
-- Subdomain enumeration
-- Wordlist generation stats
-- Cloud asset tracking
+
+* Endpoint count (live)
+* Daily rate
+* Subdomain enumeration
+* Wordlist generation stats
+* Cloud asset tracking
 
 ### Expandable Project Cards
-- Click to expand
-- Shows version, last update, and stats
-- Status badges (active, beta, core)
+
+* Click to expand
+* Shows version, last update, and stats
+* Status badges (active, beta, core)
 
 ### OMNI Section
-- Dedicated space for OMNIBREAK identity
-- Expandable bio and capabilities
-- Purple theme with glow effects
+
+* Dedicated space for OMNIBREAK identity
+* Expandable bio and capabilities
+* Purple theme with glow effects
 
 ### Theme Toggle
-- Switch between dark and light mode
-- Saves preference locally
+
+* Switch between dark and light mode
+* Saves preference locally
 
 ---
 
+## 🔧 Local Development
+
+Run the site locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/lcshjMEzOXAfzNFzdutNOmJspSkXRLRmgpxrcC1/website.git
+
+# Navigate to the folder
+cd website
+
+# Open index.html in your browser
+# Or run a local server:
+python -m http.server 8000
+```
+
+No dependencies required — pure HTML, CSS, and JavaScript.
+
+---
+
+## 📄 License
+
+This project is licensed under the Apache License 2.0 — see the `LICENSE` file for details.
+
+You are free to:
+
+* Use the code for personal or commercial projects
+* Modify and distribute
+* Include in larger works
+
+**Condition:** Include the original copyright notice and disclaimer.
+
+---
+
+## 👤 Author
+
+**𝕿𝕽𝕻𝖃𝟙<ꞆꞂꞂ꞉ꞇ꞉ꞁ꞊ꞁ>**
+Discord: `@trpx1.sys`
+GitHub: `lcshjMEzOXAfzNFzdutNOmJspSkXRLRmgpxrcC1`
+
+---
+
+## 🙏 Acknowledgments
+
+* Fonts: UnifrakturMaguntia, Inter, JetBrains Mono
+* Icons: Font Awesome
+* Styling: Tailwind CSS
+* Inspiration: Cyberpunk aesthetic
+
+---
+
+## 📬 Contact
+
+For recon inquiries, tool discussions, or just to connect:
+
+```
+@trpx1.sys
+```
+
+*Mapping the unseen topology. 0.0.0.0/0 is my playground.*
