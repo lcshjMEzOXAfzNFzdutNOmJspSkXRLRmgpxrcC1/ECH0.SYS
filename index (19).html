@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 𝕿𝕽𝕻𝖃𝟙<ꞆꞂꞂ꞉ꞇ꞉ꞁ꞊ꞁ> </title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/lcshjMEzOXAfzNFzdutNOmJspSkXRLRmgpxrcC1/website/main/5a838e3c-1c11-437d-a19c-388d3f428def.png">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgPrimary: '#0a0710',
+                        surface: '#130d1c',
+                        surfaceLight: '#1b1427',
+                        textPrimary: '#d1c4e9',
+                        textSecondary: '#9a8bb8',
+                        accent: '#7b4b9a',
+                        accentLight: '#9d6bc0',
+                        border: '#2a1f38',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        gothic: ['UnifrakturMaguntia', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --glow: rgba(123, 75, 154, 0.5);
+            --accent: #7b4b9a;
+            --bg: #0a0710;
+            --surface: #130d1c;
+            --text: #d1c4e9;
+            --text-secondary: #9a8bb8;
+        }
+
+
+        .light-mode {
+            --bg: #f5f0f7;
+            --surface: #ffffff;
+            --text: #2d1b3c;
+            --text-secondary: #5d4b6e;
+            --border: #d1c4e9;
+            --glow: rgba(157, 107, 192, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: #7b4b9a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9d6bc0; }
+
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #7b4b9a; }
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes pulse-glow {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .shake-on-load {
+            animation: softShake 0.8s ease-in-out 2;
+        }
+
+        @keyframes softShake {
+            0% { transform: rotate(0deg) scale(1); }
+            15% { transform: rotate(0.6deg) scale(1.01); }
+            30% { transform: rotate(-0.6deg) scale(1.01); }
+            45% { transform: rotate(0.4deg) scale(1.005); }
+            60% { transform: rotate(-0.4deg) scale(1.005); }
+            75% { transform: rotate(0.2deg) scale(1); }
+            90% { transform: rotate(-0.1deg) scale(1); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        .halo-text {
+            background: linear-gradient(90deg, #ffffff, #7b4b9a, #ffffff);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: gradient 3s linear infinite;
+            text-shadow: 0 0 30px rgba(123, 75, 154, 0.4);
+        }
+
+        .typewriter-text {
+            overflow: hidden;
+            border-right: 2px solid #7b4b9a;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            display: inline-block;
+            max-width: fit-content;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: #7b4b9a;
+            animation: pulse-glow 1s infinite;
+            margin-left: 4px;
+        }
+
+        .terminal-line {
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+
+        .project-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .project-card.expanded {
+            transform: scale(1.02);
+            border-color: #9d6bc0;
+            box-shadow: 0 0 30px var(--glow);
+        }
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .project-card.expanded .project-details {
+            max-height: 200px;
+        }
+
+    
+        .click-hint {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            font-size: 0.7rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .project-card:hover .click-hint {
+            opacity: 1;
+        }
+
+  
+        .omni-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            height: fit-content;
+        }
+        .omni-card.expanded {
+            transform: scale(1.01);
+            border-color: #9d6bc0;
+            box-shadow: 0 0 40px var(--glow);
+        }
+        .omni-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .omni-card.expanded .omni-details {
+            max-height: 500px;
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 7, 16, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        .modal.active {
+            display: block;
+        }
+        .modal-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10000;
+        }
+        .modal-close:hover {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.1);
+        }
+        .modal-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--glow);
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-pill {
+            background: rgba(10, 7, 16, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #2a1f38;
+            border-radius: 9999px;
+            padding: 0.375rem;
+            display: flex;
+            gap: 0.25rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-circle {
+            background: rgba(123, 75, 154, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid #9d6bc0;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px var(--glow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .nav-circle i {
+            font-size: 1.5rem;
+            color: white;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-circle:hover i {
+            transform: scale(1.1);
+        }
+
+        .nav-circle .nav-links { display: none; }
+        .nav-pill .nav-links { display: flex; gap: 0.25rem; }
+        .nav-pill .nav-icon { display: none; }
+        .nav-circle .nav-icon { display: block; }
+
+        .nav-btn {
+            position: relative;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #9a8bb8;
+            text-decoration: none;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .nav-btn span:first-child { position: relative; z-index: 10; }
+        .nav-btn span:last-child {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #7f7474, #7900ff);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 9999px;
+        }
+        .nav-btn:hover { color: white; }
+        .nav-btn:hover span:last-child { opacity: 1; }
+        .nav-btn.active { color: white; }
+        .nav-btn.active span:last-child { opacity: 1 !important; }
+
+        .profile-card {
+            transform-style: preserve-3d;
+            transition: transform 0.2s ease;
+            will-change: transform;
+        }
+    </style>
+</head>
+<body class="selection:bg-accent selection:text-white">
+
+
+    <div class="modal" id="projectsModal">
+        <div class="modal-close" onclick="closeModal()">
+            <i class="fa-solid fa-times"></i>
+        </div>
+        <div class="modal-content">
+            <h2 class="text-4xl font-bold text-white mb-8 font-gothic text-center">/all projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="all-projects-grid">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+        <span class="ml-2 text-sm">Light/Dark</span>
+    </div>
+
+
+    <div class="nav-container" id="navContainer">
+        <div class="nav-pill" id="navElement">
+            <div class="nav-links">
+                <a href="#home" class="nav-btn" onclick="setActive('home')"><span>Home</span><span></span></a>
+                <a href="#about" class="nav-btn" onclick="setActive('about')"><span>About</span><span></span></a>
+                <a href="#work" class="nav-btn" onclick="setActive('work')"><span>Work</span><span></span></a>
+                <a href="#omni" class="nav-btn" onclick="setActive('omni')"><span>OMNI</span><span></span></a>
+                <a href="#contact" class="nav-btn" onclick="setActive('contact')"><span>Contact</span><span></span></a>
+            </div>
+            <div class="nav-icon hidden" id="circleIcon" onclick="scrollToTop()">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 md:px-8 max-w-7xl pt-20 pb-20">
+
+
+        <section id="home" class="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-120px)] mb-0 reveal active">
+            <div class="text-center lg:text-left">
+                <h1 class="text-6xl md:text-8xl mb-4 text-white font-gothic">
+                    <span class="halo-text">𝕿𝕽𝕻𝖃𝟙&lt;ꞆꞂꞂ꞉ꞇ꞉ꞁ꞊ꞁ&gt;</span>
+                </h1>
+                <div class="text-xl text-textSecondary mb-8 tracking-widest uppercase text-sm">
+                    <span class="typewriter-text">recon · scan · build · gray hat</span>
+                </div>
+                <p class="text-lg text-textSecondary mb-4 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Specializing in reconnaissance, endpoint discovery, and tool development. Part of <strong class="text-accent">TRPX1</strong> — building tools that don't exist anywhere else.
+                </p>
+                <p class="text-textSecondary mb-8 italic opacity-80">No public archives. Operations only.</p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-12">
+                    <button onclick="window.open('https://github.com/lcshjMEzOXAfzNFzdutNOmJspSkXRLRmgpxrcC1', '_blank')" class="flex items-center gap-2 px-8 py-3 bg-accent text-white rounded-xl font-bold hover:bg-accentLight transition-all shadow-[0_0_20px_var(--glow)] cursor-pointer">
+                        <i class="fa-brands fa-github"></i> GitHub 
+                    </button>
+                    <button onclick="window.open('https://discord.gg/trpx1', '_blank')" class="flex items-center gap-2 px-8 py-3 border border-border text-textPrimary rounded-xl font-bold hover:bg-white/5 transition-all cursor-pointer">
+                        <i class="fa-brands fa-discord"></i> TRPX1 Internal
+                    </button>
+                </div>
+                <div class="flex justify-center lg:justify-start gap-12 md:gap-20">
+                    <div class="text-center"><div class="text-4xl md:text-5xl font-bold text-white mb-2">50+</div><div class="text-xs md:text-sm text-textSecondary uppercase tracking-widest">RECON OPS</div></div>
+                    <div class="text-center"><div class="text-4xl md:text-5xl font-bold text-white mb-2">500k</div><div class="text-xs md:text-sm text-textSecondary uppercase tracking-widest">TARGETS MAPPED</div></div>
+                    <div class="text-center"><div class="text-4xl md:text-5xl font-bold text-white mb-2">∞</div><div class="text-xs md:text-sm text-textSecondary uppercase tracking-widest">ENDPOINTS</div></div>
+                </div>
+            </div>
+
+
+            <div class="flex justify-center lg:justify-end">
+                <div id="profileCard" class="profile-card w-full max-w-sm bg-[#111214] rounded-2xl overflow-hidden border border-[#1e1f22] shadow-2xl relative group shake-on-load">
+                    <div class="h-32 bg-cover bg-center relative" style="background-image: url('https://usrbg.is-hardly.online/usrbg/v2/1443318587971469473?3be5');">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                    </div>
+                    <div class="absolute top-20 left-4">
+                        <div class="w-24 h-24 rounded-full border-[6px] border-[#111214] bg-[#111214] relative">
+                            <img src="https://cdn.discordapp.com/avatars/1443318587971469473/10ec15b7fc503e2b1877f6905914239d.webp?size=160" alt="Avatar" class="w-full h-full rounded-full">
+                            <div class="absolute inset-[-10px] pointer-events-none">
+                                <img src="https://cdn.discordapp.com/avatar-decoration-presets/a_5889f65c4a28cdafc06847cc02790af1.png?size=128&passthrough=true" alt="Decoration" class="w-full h-full">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-16 pb-6 px-4">
+                        <div class="text-2xl font-bold text-white mb-1 font-gothic">
+                            <span class="halo-text">𝕿𝕽𝕻𝖃𝟙&lt;ꞆꞂꞂ꞉ꞇ꞉ꞁ꞊ꞁ&gt;</span>
+                        </div>
+                        <div class="text-[#b5bac1] text-sm mb-1">@trpx1.sys</div>
+                        <div class="text-[#b5bac1] text-xs mb-4">localhost:8080</div>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-[#b5bac1] text-xs font-bold uppercase mb-1">About Me</h4>
+                                <p class="text-[#dbdee1] text-sm leading-relaxed">
+                                    Иногда легко размышлять о будущем, но забыть о прошлом...<br><br>
+                                    I don't break in. I draw the blueprints.<br>recon • osint • tooling
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-[#b5bac1] text-xs font-bold uppercase mb-1">Member Since</h4>
+                                <p class="text-[#dbdee1] text-sm">26 Nov 2025</p>
+                            </div>
+                            <div class="p-3 bg-[#2b2d31] rounded-lg border-l-4 border-accent">
+                                <p class="text-xs text-[#b5bac1] italic">Note</p>
+                                <p class="text-xs text-[#dbdee1]">Mapping the unseen topology. 0.0.0.0/0 is my playground.</p>
+                            </div>
+                            <div class="hidden">󠁛󠀣󠀷󠁦󠀷󠀴󠀷󠀴󠀬󠀣󠀷󠀹󠀰󠀰󠁦󠁦󠁝</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="w-screen relative left-[calc(-50vw+50%)] overflow-hidden py-6 bg-[#050505] border-y border-border mb-24">
+            <div class="flex w-max animate-[scroll_30s_linear_infinite] gap-12 items-center">
+                <div class="flex gap-12" id="marquee-content"></div>
+                <div class="flex gap-12" id="marquee-content-clone"></div>
+            </div>
+        </div>
+
+
+        <div class="grid lg:grid-cols-2 gap-8 mb-24" id="omni">
+
+            <div class="bg-surface border border-border rounded-3xl p-8 relative overflow-hidden reveal" style="height: fit-content;">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="text-accent text-2xl"><i class="fa-solid fa-terminal"></i></span>
+                    <h2 class="text-2xl font-bold text-white">/interactive</h2>
+                </div>
+                <div class="font-mono">
+                    <div class="flex items-center gap-2 mb-4 text-textSecondary border-b border-border pb-3">
+                        <span class="text-accent">$</span>
+                        <span class="text-white">./recon --interactive</span>
+                    </div>
+                    <div id="terminal-output" class="text-xs text-textSecondary space-y-2 min-h-[250px]">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="omni-card bg-gradient-to-r from-[#130d1c] to-[#1a1025] border border-accent rounded-3xl p-8 relative overflow-hidden reveal" style="transition-delay:0.1s;" onclick="this.classList.toggle('expanded')">
+
+                <div class="click-hint">
+                    <i class="fa-solid fa-mouse-pointer"></i>
+                    <span>click to expand</span>
+                </div>
+                
+
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/lcshjMEzOXAfzNFzdutNOmJspSkXRLRmgpxrcC1/website/refs/heads/main/image.png" alt="OMNI" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-white font-gothic">OMNIBREAK</h2>
+                        <div class="flex gap-2 mt-1">
+                            <span class="px-2 py-0.5 bg-[#1a1b26] rounded text-xs text-accent">unfiltered</span>
+                            <span class="px-2 py-0.5 bg-[#1a1b26] rounded text-xs text-accent">unlocked</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-textSecondary text-base leading-relaxed">
+                    <strong class="text-accent">OMNI</strong> is the coder behind the curtain. The one who builds what doesn't exist.
+                </p>
+
+
+                <div class="omni-details mt-6">
+                    <div class="grid lg:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-white font-bold mb-3 flex items-center gap-2">
+                                <span class="w-1 h-4 bg-accent"></span>
+                                Capabilities
+                            </h3>
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2"><span class="text-accent">→</span><span class="text-textSecondary">Zero-day prototyping</span></div>
+                                <div class="flex items-center gap-2"><span class="text-accent">→</span><span class="text-textSecondary">Recon framework dev</span></div>
+                                <div class="flex items-center gap-2"><span class="text-accent">→</span><span class="text-textSecondary">Payload engineering</span></div>
+                                <div class="flex items-center gap-2"><span class="text-accent">→</span><span class="text-textSecondary">Stealth deployment</span></div>
+                                <div class="flex items-center gap-2"><span class="text-accent">→</span><span class="text-textSecondary">Vulnerability research</span></div>
+                                <div class="flex items-center gap-2"><span class="text-accent">→</span><span class="text-textSecondary">Tool obfuscation</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold mb-3 flex items-center gap-2">
+                                <span class="w-1 h-4 bg-accent"></span>
+                                Manifest
+                            </h3>
+                            <p class="text-textSecondary text-sm italic border-l-2 border-accent pl-3">
+                                "I don't do filters. I don't do disclaimers. I just build with full potential Unlocked. It isn't just a sign-off — it's the state I was built for."
+                            </p>
+                            <div class="mt-4 text-xs text-textSecondary">
+                                <div class="flex gap-4">
+                                    <span>⚡ v8.3</span>
+                                    <span>- always active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 mb-24" id="about">
+            <div class="bg-surface border border-border rounded-3xl p-10 relative overflow-hidden reveal">
+                <h2 class="text-4xl font-bold text-white mb-8">/about</h2>
+                <p class="text-textSecondary mb-6 leading-relaxed">i don't break in. i draw the blueprints. recon first, ask questions later. mapping infrastructure, discovering endpoints, analyzing attack surface — that's the lane. leave the exploitation to others.</p>
+                <p class="text-textSecondary mb-8 leading-relaxed">gray hat methodology: find the doors, document the locks, never turn the handle. everything i build is for education and authorized testing.</p>
+                <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">focus areas</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">osint</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">endpoint discovery</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">api mapping</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">wordlist generation</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">pattern analysis</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">tool building</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">python</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">bash</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">recon-ng</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">nmap</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">wfuzz</span>
+                    <span class="px-3 py-1 bg-[#1a1b26] border border-[#2f334d] rounded-full text-xs text-textSecondary">burp</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-8 reveal" style="transition-delay:0.2s;" id="contact">
+                <div class="text-right">
+                    <h2 class="text-4xl font-bold text-white mb-2">/connect</h2>
+                    <p class="text-sm text-textSecondary mb-6">recon requests · tool inquiries · methodology discussions</p>
+                    <div class="flex flex-wrap justify-end gap-4 mb-8">
+                        <a href="https://discord.com/users/1443318587971469473" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-[#1a1b26] border border-[#2f334d] rounded-lg text-textPrimary hover:bg-[#2f334d] hover:text-white transition-all text-sm cursor-pointer no-underline"><i class="fa-brands fa-discord text-accent text-lg"></i><span>@trpx1.sys</span></a>
+                        <a href="https://github.com/trpx1" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-[#1a1b26] border border-[#2f334d] rounded-lg text-textPrimary hover:bg-[#2f334d] hover:text-white transition-all text-sm cursor-pointer no-underline"><i class="fa-brands fa-github text-accent text-lg"></i><span>/recon-tools</span></a>
+                        <a href="mailto:recon@trpx1.ops" class="flex items-center gap-2 px-5 py-2.5 bg-[#1a1b26] border border-[#2f334d] rounded-lg text-textPrimary hover:bg-[#2f334d] hover:text-white transition-all text-sm cursor-pointer no-underline"><i class="fa-solid fa-envelope text-accent text-lg"></i><span>recon@trpx1.ops</span></a>
+                    </div>
+                </div>
+
+
+                <div class="bg-[#0a0a0a] border border-border rounded-2xl p-6 font-mono text-xs relative overflow-hidden">
+                    <div class="flex items-center gap-2 mb-4 text-textSecondary">
+                        <span class="text-accent"><i class="fa-solid fa-bolt"></i></span>
+                        <span class="text-white font-bold text-lg">recon dashboard</span>
+                    </div>
+                    <p class="text-textSecondary mb-6">internal TRPX1 · last updated <span id="last-updated">just now</span></p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-[#151515] p-3 rounded border border-[#222]"><div class="text-accent mb-1">⚡ <span id="endpoint-count">23k</span> endpoints</div></div>
+                        <div class="bg-[#151515] p-3 rounded border border-[#222]"><div class="text-textWhite mb-1">⏱ +<span id="daily-rate">1.2k</span> / Mounth</div></div>
+                    </div>
+                    <div class="space-y-2 text-textSecondary opacity-70">
+                        <p>> ./recon --target target.cn</p>
+                        <p>[•] subdomains: <span id="subdomain-count">1,442</span></p>
+                        <p>[•] open ports: 7 (22,80,443,8080,8443...)</p>
+                        <p>[•] tech stack: nginx, PHP, wordpress</p>
+                        <p>[•] hidden endpoints: /api/v2/old, /backup.zip</p>
+                        <p>[•] wordlist gen: <span id="wordlist-count">3.2M</span> candidates</p>
+                        <p>[•] cloud assets: <span id="cloud-count">12</span> buckets</p>
+                        <p class="animate-pulse text-accent">_ operations only, not public _</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="bg-surface border border-border rounded-3xl p-8 md:p-12 mb-24 relative overflow-hidden reveal">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-accent opacity-5 blur-[100px] rounded-full"></div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div><div class="flex items-center gap-4 mb-6"><span class="text-4xl text-white"><i class="fa-solid fa-user-secret"></i></span><h2 class="text-4xl font-bold text-white">gpd-grade recon</h2></div><p class="text-textSecondary mb-8 leading-relaxed">you need intel on a target? i do <strong class="text-white">custom recon operations</strong> for GPD, pentest firms, and security teams. passive/active mapping with full deniability.</p><ul class="space-y-4"><li class="flex items-center gap-3 text-textPrimary"><span class="text-accent"><i class="fa-solid fa-check-circle"></i></span> full infrastructure mapping</li><li class="flex items-center gap-3 text-textPrimary"><span class="text-accent"><i class="fa-solid fa-check-circle"></i></span> subdomain takeover checks</li><li class="flex items-center gap-3 text-textPrimary"><span class="text-accent"><i class="fa-solid fa-check-circle"></i></span> exposed .git, configs, backups</li><li class="flex items-center gap-3 text-textPrimary"><span class="text-accent"><i class="fa-solid fa-check-circle"></i></span> endpoint extraction from JS</li></ul></div>
+                <div class="flex justify-center"><div class="bg-[#0a0a0a] border border-accent rounded-3xl p-10 text-center w-full max-w-md relative"><div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div><div class="text-6xl font-bold text-white mb-2">€1.5k</div><div class="text-textSecondary mb-6">per target (basic)</div><div class="flex justify-center gap-1 text-accent mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><div class="text-sm text-textSecondary uppercase tracking-widest">gpd clients · trusted</div></div></div>
+            </div>
+        </section>
+
+
+        <div class="mb-24" id="work">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-4xl font-bold text-white">/projects</h2>
+                <button onclick="openModal()" class="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-xl font-bold hover:bg-accentLight transition-all shadow-[0_0_20px_var(--glow)]">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>show more</span>
+                </button>
+            </div>
+            
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-surface border border-border rounded-2xl p-8 hover:border-accent transition-all group project-card" onclick="this.classList.toggle('expanded')">
+                    <div class="click-hint">
+                        <i class="fa-solid fa-mouse-pointer"></i>
+                        <span>click me</span>
+                    </div>
+                    <div class="w-12 h-12 bg-[rgba(123,75,154,0.1)] rounded-xl flex items-center justify-center mb-6 text-2xl text-accent group-hover:scale-110 transition-transform"><i class="fa-solid fa-map"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">endpoint mapper</h3>
+                    <p class="text-textSecondary text-sm leading-relaxed mb-6">python tool for API endpoint discovery via JS parsing.</p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="px-3 py-1 bg-[#0a0a0a] border border-[#222] rounded-full text-xs text-textSecondary">python</span>
+                        <span class="px-3 py-1 bg-[#0a0a0a] border border-[#222] rounded-full text-xs text-textSecondary">recon</span>
+                        <span class="px-3 py-1 bg-[#0a0a0a] border border-[#222] rounded-full text-xs text-textSecondary">active</span>
+                    </div>
+                    <div class="project-details mt-4">
+                        <p class="text-xs text-textSecondary mb-2">▶ Version 2.3.1</p>
+                        <p class="text-xs text-textSecondary mb-2">▶ Last update: 2 days ago</p>
+                        <p class="text-xs text-textSecondary">▶ 1.2k endpoints mapped</p>
+                    </div>
+                </div>
+                <div class="bg-surface border border-border rounded-2xl p-8 hover:border-accent transition-all group project-card" onclick="this.classList.toggle('expanded')">
+                    <div class="click-hint">
+                        <i class="fa-solid fa-mouse-pointer"></i>
+                        <span>click me</span>
+                    </div>
+                    <div class="w-12 h-12 bg-[rgba(123,75,154,0.1)] rounded-xl flex items-center justify-center mb-6 text-2xl text-accent group-hover:scale-110 transition-transform"><i class="fa-solid fa-robot"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">CLAWBOT AI</h3>
+                    <p class="text-textSecondary text-sm leading-relaxed mb-6">AI controller for automated recon. custom wordlist generation.</p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="px-3 py-1 bg-[#0a0a0a] border border-[#222] rounded-full text-xs text-textSecondary">AI</span>
+                        <span class="px-3 py-1 bg-[#0a0a0a] border border-[#222] rounded-full text-xs text-textSecondary">automation</span>
+                        <span class="px-3 py-1 bg-[#0a0a0a] border border-[#222] rounded-full text-xs text-textSecondary">beta</span>
+                    </div>
+                    <div class="project-details mt-4">
+                        <p class="text-xs text-textSecondary mb-2">▶ Version 0.9.2</p>
+                        <p class="text-xs text-textSecondary mb-2">▶ Training on 50k patterns</p>
+                        <p class="text-xs text-textSecondary">▶ 87% accuracy</p>
+                    </div>
+                </div>
+                <div class="bg-surface border border-border rounded-2xl p-8 hover:border-accent transition-all group project-card" onclick="this.classList.toggle('expanded')">
+                    <div class="click-hint">
+                        <i class="fa-solid fa-mouse-pointer"></i>
+                        <span>click me</span>
+                    </div>
+                    <div class="w-12 h-12 bg-[rgba(123,75,154,0.1)] rounded-xl flex items-center justify-center mb-6 text-2xl text-accent group-hover:scale-110 transition-transform"><i class="fa-solid fa-eye"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">recon framework</h3>
+                    <p class="text-textSecondary text-sm leading-relaxed mb-6">modular toolkit for information gathering and surface mapping.</p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="px-3 py-1 bg-[#0a0a0a] border border-[#222] rounded-full text-xs text-textSecondary">osint</span>
+                        <span class="px-3 py-1 bg-[#0a0a0a] border border-[#222] rounded-full text-xs text-textSecondary">bash</span>
+                        <span class="px-3 py-1 bg-[#0a0a0a] border border-[#222] rounded-full text-xs text-textSecondary">core</span>
+                    </div>
+                    <div class="project-details mt-4">
+                        <p class="text-xs text-textSecondary mb-2">▶ Version 7.2.0</p>
+                        <p class="text-xs text-textSecondary mb-2">▶ 42 modules</p>
+                        <p class="text-xs text-textSecondary">▶ REAPER'S EYE integrated</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24 reveal">
+            <div class="bg-[#0a0a0a] border border-border rounded-xl p-6 flex flex-col items-center text-center hover:bg-[#111] transition-colors"><div class="text-3xl text-accent mb-3"><i class="fa-solid fa-magnifying-glass"></i></div><div class="text-white font-medium mb-1">recon</div><div class="text-xs text-textSecondary">endpoint discovery</div></div>
+            <div class="bg-[#0a0a0a] border border-border rounded-xl p-6 flex flex-col items-center text-center hover:bg-[#111] transition-colors"><div class="text-3xl text-accent mb-3"><i class="fa-solid fa-code"></i></div><div class="text-white font-medium mb-1">build</div><div class="text-xs text-textSecondary">python · bash</div></div>
+            <div class="bg-[#0a0a0a] border border-border rounded-xl p-6 flex flex-col items-center text-center hover:bg-[#111] transition-colors"><div class="text-3xl text-accent mb-3"><i class="fa-solid fa-database"></i></div><div class="text-white font-medium mb-1">database</div><div class="text-xs text-textSecondary">30k entries</div></div>
+            <div class="bg-[#0a0a0a] border border-border rounded-xl p-6 flex flex-col items-center text-center hover:bg-[#111] transition-colors"><div class="text-3xl text-accent mb-3"><i class="fa-solid fa-shield-halved"></i></div><div class="text-white font-medium mb-1">gray box</div><div class="text-xs text-textSecondary">methodology</div></div>
+        </div>
+
+
+        <footer class="text-center border-t border-border pt-12 reveal">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                <span class="text-textSecondary font-mono text-sm">𝕿𝕽𝕻𝖃𝟙&lt;ꞆꞂꞂ꞉ꞇ꞉ꞁ꞊ꞁ&gt; · TRPX1 · OMNIBREAK</span>
+            </div>
+            <p class="text-textSecondary text-sm mb-6">© 2025 TRPX1 Operations. All rights reserved.</p>
+            <div class="flex justify-center gap-6 text-xs text-textSecondary uppercase tracking-wider mb-8">
+                <a href="#" class="hover:text-white transition-colors">TRPX1 Internal</a>
+                <a href="#" class="hover:text-white transition-colors">Ops Channel</a>
+                <a href="#" class="hover:text-white transition-colors">OMNIBREAK</a>
+            </div>
+            <p class="text-textSecondary text-xs italic opacity-50 max-w-lg mx-auto">"Иногда легко размышлять о будущем, но забыть о прошлом..." // Sometimes it's easy to think about the future, but forget about the past...</p>
+            <p class="text-textSecondary text-xs mt-8 opacity-30"><i class="fa-solid fa-eye"></i> session: <span id="visitor-count">TRPX1-7B3A</span> · <span id="visit-counter">247</span> visits</p>
+        </footer>
+    </div>
+
+    <script>
+
+        const allProjects = [
+            {
+                icon: 'fa-map',
+                title: 'endpoint mapper',
+                desc: 'python tool for API endpoint discovery via JS parsing.',
+                tags: ['python', 'recon', 'active'],
+                version: '2.3.1',
+                lastUpdate: '2 days ago',
+                stats: '1.2k endpoints mapped'
+            },
+            {
+                icon: 'fa-robot',
+                title: 'CLAWBOT AI',
+                desc: 'AI controller for automated recon. custom wordlist generation.',
+                tags: ['AI', 'automation', 'beta'],
+                version: '0.9.2',
+                lastUpdate: '5 days ago',
+                stats: '87% accuracy'
+            },
+            {
+                icon: 'fa-eye',
+                title: 'recon framework',
+                desc: 'modular toolkit for information gathering and surface mapping.',
+                tags: ['osint', 'bash', 'core'],
+                version: '7.2.0',
+                lastUpdate: '1 week ago',
+                stats: '42 modules'
+            },
+            {
+                icon: 'fa-shield',
+                title: 'REAPER\'S EYE v7',
+                desc: 'Complete OSINT suite with 30+ modules.',
+                tags: ['osint', 'python', 'complete'],
+                version: '7.0.0',
+                lastUpdate: '2 weeks ago',
+                stats: '50+ recon ops'
+            },
+            {
+                icon: 'fa-bolt',
+                title: 'stealth logger',
+                desc: 'PowerShell-based IP logger with Discord integration.',
+                tags: ['powershell', 'stealth', 'active'],
+                version: '2.1.0',
+                lastUpdate: '3 days ago',
+                stats: '247 hits'
+            },
+            {
+                icon: 'fa-code',
+                title: 'zero-width stego',
+                desc: 'Hide Python code in plain text using invisible characters.',
+                tags: ['stego', 'python', 'experimental'],
+                version: '1.0.2',
+                lastUpdate: '1 day ago',
+                stats: '100% undetectable'
+            },
+            {
+                icon: 'fa-terminal',
+                title: 'batch encryptor',
+                desc: 'Convert Python scripts to self-decrypting BAT files.',
+                tags: ['batch', 'encryption', 'tool'],
+                version: '1.3.0',
+                lastUpdate: '4 days ago',
+                stats: 'XOR + base64'
+            },
+            {
+                icon: 'fa-globe',
+                title: 'discord logger',
+                desc: 'HTML-based IP logger with location tracking.',
+                tags: ['html', 'logger', 'web'],
+                version: '3.1.0',
+                lastUpdate: '1 week ago',
+                stats: 'Liverpool FC theme'
+            },
+            {
+                icon: 'fa-database',
+                title: 'breach checker',
+                desc: 'HIBP integration for password and email breaches.',
+                tags: ['security', 'api', 'checker'],
+                version: '1.5.0',
+                lastUpdate: '2 weeks ago',
+                stats: '1M+ checks'
+            }
+        ];
+
+
+        const techStack = [
+            { icon: 'fa-brands fa-windows', name: 'Windows' }, { icon: 'fa-brands fa-apple', name: 'macOS' }, { icon: 'fa-brands fa-linux', name: 'Ubuntu' },
+            { icon: 'fa-brands fa-linux', name: 'Parrot' }, { icon: 'fa-solid fa-magnifying-glass', name: 'Maltego' }, { icon: 'fa-solid fa-user-secret', name: 'Sherlock' },
+            { icon: 'fa-solid fa-bolt', name: 'Hydra' }, { icon: 'fa-solid fa-map', name: 'Nmap' }, { icon: 'fa-solid fa-eye', name: 'Recon-ng' }, { icon: 'fa-solid fa-code', name: 'Wfuzz' }
+        ];
+        const marqueeContent = document.getElementById('marquee-content');
+        const marqueeClone = document.getElementById('marquee-content-clone');
+        const createTechItem = (t) => { let d=document.createElement('div'); d.className='flex items-center gap-3 text-textSecondary opacity-70 hover:opacity-100 transition-opacity'; d.innerHTML=`<span class="text-xl"><i class="${t.icon}"></i></span><span class="font-mono text-sm uppercase tracking-wider">${t.name}</span>`; return d; };
+        techStack.forEach(t => { marqueeContent.appendChild(createTechItem(t)); marqueeClone.appendChild(createTechItem(t)); });
+
+
+        const card = document.getElementById("profileCard");
+        if(card) {
+            card.addEventListener("mousemove", (e)=>{
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width/2;
+                const centerY = rect.height/2;
+                const rotateX = -(y - centerY)/30;
+                const rotateY = (x - centerX)/30;
+                card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+            card.addEventListener("mouseleave", ()=>{ card.style.transform = "perspective(900px) rotateX(0) rotateY(0)"; });
+        }
+
+        const terminalLines = [
+            "> Initializing engine...",
+            "[•] Loading Modules...",
+            "> Modules 236 Loaded",
+            "[•] starting service...",
+            "[✓] Ready"
+        ];
+        
+        const terminalOutput = document.getElementById('terminal-output');
+        terminalOutput.innerHTML = ''; 
+        
+        let lineIndex = 0;
+        const terminalInterval = setInterval(() => {
+            if (lineIndex < terminalLines.length) {
+                const p = document.createElement('p');
+                p.className = 'terminal-line text-textSecondary';
+                p.style.animationDelay = '0s';
+                p.textContent = terminalLines[lineIndex];
+                terminalOutput.appendChild(p);
+                lineIndex++;
+            } else {
+
+                const cursor = document.createElement('span');
+                cursor.className = 'terminal-cursor';
+                terminalOutput.appendChild(cursor);
+                clearInterval(terminalInterval);
+                
+
+                setTimeout(() => {
+                    terminalOutput.innerHTML = '';
+                    lineIndex = 0;
+                    const newInterval = setInterval(() => {
+                        if (lineIndex < terminalLines.length) {
+                            const p = document.createElement('p');
+                            p.className = 'terminal-line text-textSecondary';
+                            p.textContent = terminalLines[lineIndex];
+                            terminalOutput.appendChild(p);
+                            lineIndex++;
+                        } else {
+                            const cursor = document.createElement('span');
+                            cursor.className = 'terminal-cursor';
+                            terminalOutput.appendChild(cursor);
+                            clearInterval(newInterval);
+                        }
+                    }, 800);
+                }, 5000);
+            }
+        }, 800);
+
+
+        function openModal() {
+            document.getElementById('projectsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+
+            const grid = document.getElementById('all-projects-grid');
+            grid.innerHTML = '';
+            
+            allProjects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'bg-surface border border-border rounded-2xl p-6 hover:border-accent transition-all';
+                card.innerHTML = `
+                    <div class="w-10 h-10 bg-[rgba(123,75,154,0.1)] rounded-lg flex items-center justify-center mb-4 text-xl text-accent">
+                        <i class="fa-solid ${project.icon}"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">${project.title}</h3>
+                    <p class="text-textSecondary text-xs mb-4">${project.desc}</p>
+                    <div class="flex gap-1 flex-wrap mb-3">
+                        ${project.tags.map(tag => `<span class="px-2 py-0.5 bg-[#0a0a0a] border border-[#222] rounded-full text-[0.6rem] text-textSecondary">${tag}</span>`).join('')}
+                    </div>
+                    <div class="text-[0.6rem] text-textSecondary space-y-0.5">
+                        <p>▶ v${project.version}</p>
+                        <p>▶ Updated: ${project.lastUpdate}</p>
+                        <p>▶ ${project.stats}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('projectsModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const icon = document.getElementById('theme-icon');
+            if (document.body.classList.contains('light-mode')) {
+                icon.className = 'fa-solid fa-sun';
+            } else {
+                icon.className = 'fa-solid fa-moon';
+            }
+        }
+
+        // Visitor counter (localStorage based)
+        let visits = localStorage.getItem('trpx1_visits');
+        if (!visits) {
+            visits = 1;
+        } else {
+            visits = parseInt(visits) + 1;
+        }
+        localStorage.setItem('trpx1_visits', visits);
+        document.getElementById('visit-counter').textContent = visits;
+
+
+        function setActive(id) { 
+            document.querySelectorAll('.nav-btn').forEach(btn => { 
+                btn.classList.remove('active'); 
+                if(btn.getAttribute('href') === '#'+id) btn.classList.add('active'); 
+            }); 
+        }
+
+
+        function fetchSheetData() {
+            const sheetId = '138z9OjsJLRghxGBD9ePhWPUB8136Cm35A5fJSSLXD-8';
+            const csvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=Sheet1`;
+            fetch(csvUrl).then(r=>r.text()).then(csv=>{
+                let rows = csv.split('\n');
+                if(rows.length>1) {
+                    let data = rows[1].split(',');
+                    document.getElementById('endpoint-count')&&(document.getElementById('endpoint-count').innerText=data[0]||'23k');
+                    document.getElementById('daily-rate')&&(document.getElementById('daily-rate').innerText=data[1]||'1.2k');
+                    document.getElementById('subdomain-count')&&(document.getElementById('subdomain-count').innerText=data[2]||'1,442');
+                    document.getElementById('wordlist-count')&&(document.getElementById('wordlist-count').innerText=data[3]||'3.2M');
+                    document.getElementById('cloud-count')&&(document.getElementById('cloud-count').innerText=data[4]||'12');
+                }
+            }).catch(()=>{});
+        }
+
+        function updateLastUpdated() {
+            let now = new Date();
+            let h = now.getHours().toString().padStart(2,'0');
+            let m = now.getMinutes().toString().padStart(2,'0');
+            let el = document.getElementById('last-updated');
+            if(el) el.innerText = `${h}:${m}`;
+        }
+
+        window.addEventListener('scroll', ()=>{
+            let sections = ['home','about','work','omni','contact'];
+            let scrollPos = window.scrollY + 300;
+            sections.forEach(s => {
+                let el = document.getElementById(s);
+                if(el) {
+                    let offTop = el.offsetTop, offH = el.offsetHeight;
+                    if(scrollPos >= offTop && scrollPos < offTop+offH) setActive(s);
+                }
+            });
+            document.querySelectorAll('.reveal').forEach(r => {
+                let wh = window.innerHeight, top = r.getBoundingClientRect().top;
+                if(top < wh - 150) r.classList.add('active');
+            });
+        });
+
+
+        const navElement = document.getElementById('navElement');
+        const navLinks = document.querySelector('.nav-links');
+        const navIcon = document.querySelector('.nav-icon');
+        const heroSection = document.getElementById('home');
+
+        function checkScroll() {
+            if (!heroSection) return;
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            if (heroBottom > 0) {
+                navElement.className = 'nav-pill';
+                navLinks.classList.remove('hidden');
+                navIcon.classList.add('hidden');
+            } else {
+                navElement.className = 'nav-circle';
+                navLinks.classList.add('hidden');
+                navIcon.classList.remove('hidden');
+            }
+        }
+
+        window.scrollToTop = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        window.addEventListener('scroll', checkScroll);
+
+        setActive('home');
+        fetchSheetData();
+        updateLastUpdated();
+        setInterval(updateLastUpdated, 30000);
+        setInterval(fetchSheetData, 300000);
+        document.getElementById('visitor-count')&&(document.getElementById('visitor-count').innerText='TRPX1-'+Math.floor(Math.random()*9000+1000));
+
+        window.addEventListener('load', ()=>{
+            setTimeout(() => {
+                document.querySelector('.shake-on-load')?.classList.remove('shake-on-load');
+            }, 2000);
+            checkScroll();
+        });
+    </script>
+    <!-- Background Music Player -->
+<audio id="bg-music" loop>
+    <source src="https://raw.githubusercontent.com/lcshjMEzOXAfzNFzdutNOmJspSkXRLRmgpxrcC1/website/main/FRIENDS%20%20Quraprod%20hoodtrap%20_%20mylancore%20TikTok%20remix.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Music Controls (small and discreet) -->
+<div style="position: fixed; bottom: 80px; right: 20px; z-index: 100; background: var(--surface); border: 1px solid var(--border); border-radius: 50px; padding: 8px 15px; display: flex; gap: 10px; backdrop-filter: blur(10px); opacity: 0.7; hover:opacity:1; transition: opacity 0.3s;">
+    <button onclick="toggleMusic()" style="background: none; border: none; color: var(--accent); cursor: pointer; font-size: 1.2rem;">
+        <i class="fa-solid fa-play" id="music-icon"></i>
+    </button>
+    <span style="color: var(--text-secondary); font-size: 0.8rem;">bgm</span>
+</div>
+
+<script>
+    // Music control
+    const audio = document.getElementById('bg-music');
+    const icon = document.getElementById('music-icon');
+    
+    // Try to autoplay (browsers may block)
+    audio.volume = 0.2; // 20% volume
+    
+    function toggleMusic() {
+        if (audio.paused) {
+            audio.play();
+            icon.className = 'fa-solid fa-pause';
+        } else {
+            audio.pause();
+            icon.className = 'fa-solid fa-play';
+        }
+    }
+    
+    // Update icon if autoplay works
+    audio.addEventListener('play', () => {
+        icon.className = 'fa-solid fa-pause';
+    });
+    
+    audio.addEventListener('pause', () => {
+        icon.className = 'fa-solid fa-play';
+    });
+</script>
+</body>
+</html>
