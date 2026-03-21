@@ -92,26 +92,6 @@ website/
 
 ---
 
-## 🔧 Local Development
-
-Run the site locally:
-
-```bash
-# Clone the repository
-git clone https://github.com/lcshjMEzOXAfzNFzdutNOmJspSkXRLRmgpxrcC1/website.git
-
-# Navigate to the folder
-cd website
-
-# Open index.html in your browser
-# Or run a local server:
-python -m http.server 8000
-```
-
-No dependencies required — pure HTML, CSS, and JavaScript.
-
----
-
 ## 📄 License
 
 This project is licensed under the Apache License 2.0 — see the `LICENSE` file for details.
